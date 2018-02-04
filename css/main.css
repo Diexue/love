@@ -1,0 +1,109 @@
+body {
+    /*perspective 属性指定了观察者与z=0平面的距离，使具有三维位置变换的元素产生透视效果。
+    z>0的三维元素比正常大，而z<0时则比正常小，大小程度由该属性的值决定。默认情况下，
+    消失点位于元素的中心，但是可以通过设置perspective-origin属性来改变其位置。*/
+    -webkit-perspective: 1000px;
+    -moz-perspective: 1000px;
+    -ms-perspective: 1000px;
+    perspective: 1000px;
+    background-color: #212121;
+    font-family: '微软雅黑';
+}
+.c_ef5350{
+    color: #ef5350;
+}
+.bg_ef5350{
+    background: #ef5350;
+}
+.c_white{
+    color:#fff
+}
+.bg_white{
+    background: #fff;
+}
+.content{
+    position: relative;
+    width: 100%;
+    height:100%;
+}
+.book{
+    position: absolute;
+    top:50%;
+    left:50%;
+    width: 300px;
+    height:300px;
+    background: #fff;
+    -webkit-transform: rotateX(30deg);
+    -ms-transform: rotateX(30deg);
+    -o-transform: rotateX(30deg);
+    transform: rotateX(30deg);
+}
+/*transform-style属性指定了，该元素的子元素是（看起来）位于三维空间内，还是在该元素所在的平面内被扁平化。*/
+.preserve-3d{
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style:preserve-3d;
+    transform-style:preserve-3d
+}
+
+.book-page-box{
+    -webkit-transform-origin: 0 50%;
+    -moz-transform-origin: 0 50%;
+    -ms-transform-origin: 0 50%;
+    -o-transform-origin: 0 50%;
+    transform-origin: 0 50%;
+    -webkit-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    -o-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+}
+.book-page{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    width: 300px;
+    height: 300px;
+    border: 1px solid #ef5350;
+    box-sizing: border-box;
+}
+.book-page p{
+    text-align: center;
+    width: 100%;
+}
+.flip-1{
+    animation: flipBook1 5s forwards;
+}
+.flip-2{
+    animation: flipBook2 4s 2s forwards;
+}
+
+@keyframes flipBook1 {
+    0% {
+        -webkit-transform: rotateY(0deg);
+        -ms-transform: rotateY(0deg);
+        -o-transform: rotateY(0deg);
+        transform: rotateY(0deg);
+    }
+    100% {
+        -webkit-transform: rotateY(-160deg);
+        -ms-transform: rotateY(-160deg);
+        -o-transform: rotateY(-160deg);
+        transform: rotateY(-160deg);
+    }
+}
+@keyframes flipBook2 {
+    0% {
+        -webkit-transform: rotateY(0deg);
+        -ms-transform: rotateY(0deg);
+        -o-transform: rotateY(0deg);
+        transform: rotateY(0deg);
+    }
+    100% {
+        -webkit-transform: rotateY(-150deg);
+        -ms-transform: rotateY(-150deg);
+        -o-transform: rotateY(-150deg);
+        transform: rotateY(-150deg);
+    }
+}
